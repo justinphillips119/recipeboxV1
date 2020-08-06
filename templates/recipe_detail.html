@@ -1,0 +1,7 @@
+{% if not recipe %}
+    <h1>The post your looking for doesn't seem to exist!</h1>
+{% else %}
+    <h2>{{ recipe.title }}</h2>
+    <h4>{{ recipe.author.name }}</h4>
+    <p>{{ recipe.description }}</p>
+{% endif %}
