@@ -12,7 +12,7 @@ class Recipe(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.TextField()
     time_required = models.CharField(max_length= 50)
-    instructions = models.TextField()
+    instruction = models.TextField()
 
     def __str__(self):
         return f"{self.title} - {self.author.name}"
