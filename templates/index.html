@@ -1,5 +1,5 @@
 <h1>Hello, {{ welcome_name }}!</h1>
-
+<h2>Am I authenticated? {{ request.user.is_authenticated }}</h2>
 <ul>
     {% for post in title %}
         <li>
@@ -14,5 +14,9 @@
 </ul>
 
 <a href="addauthor/">Add an Author!</a>
-
+<br>
 <a href="addrecipe/">Add a Recipe!</a>
+<br>
+<a href="login/">Login!</a>
+<br>
+<a href="logout/">Logout!</a>
