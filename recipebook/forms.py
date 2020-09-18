@@ -2,6 +2,8 @@ from django import forms
 from recipebook.models import Author, Recipe
 
 class AddAuthorForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(widget=forms.PasswordInput)
     name = forms.CharField(max_length=80)
     bio = forms.CharField(widget=forms.Textarea)
     

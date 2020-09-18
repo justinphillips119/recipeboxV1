@@ -2,6 +2,15 @@
     <h1>The post your looking for doesn't seem to exist!</h1>
 {% else %}
     <h2>{{ recipe.title }}</h2>
-    <h4><a href="/author/{{recipe.author.id}}/">{{ recipe.author.name }}</a></h4>
-    <p>{{ recipe.description }}</p>
+    <h3>Time Required: {{ recipe.time_required }}</h3>
+    <h4><a href="/author/{{recipe.author.id}}/">Author: {{ recipe.author.name }}</a></h4>
+    <p>Description: {{ recipe.description }}</p>
+    <p>Instructions: {{ recipe.instruction }}</p>
+    {% if request.user.is_authenticated %}
+        <a href="/favorite/{{recipe.id}}/">Favorite</a>
+        <br>
+        {% if request.user.is_staff or recipe.author.user == request.user %}
+            <a href="/recipe/{{recipe.id}}/edit/">Edit</a>
+        {% endif %}
+    {% endif %}
 {% endif %}

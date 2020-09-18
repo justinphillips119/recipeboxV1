@@ -20,10 +20,12 @@ from recipebook import views
 
 urlpatterns = [
     path('', views.index, name="homepage"),
-    path('author/<int:author_id>/', views.author_viber),
-    path('recipe/<int:recipe_id>/', views.recipe_detail),
+    path('author/<int:author_id>/', views.author_viber, name="author_details"),
+    path('recipe/<int:recipe_id>/edit/', views.edit_recipe_view, name="edit_recipe"),
+    path('recipe/<int:recipe_id>/', views.recipe_detail, name="recipe_details"),
     path('addauthor/', views.add_author),
     path('addrecipe/', views.add_recipe),
+    path('favorite/<int:recipe_id>/', views.favorites_view, name='addfavorite'),
     path('login/', views.login_view, name="login_view"),
     path('logout/', views.logout_view, name="logout_view"),
     path('signup/', views.signup_view,name="signup_view"),
