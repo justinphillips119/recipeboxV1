@@ -129,18 +129,4 @@ def favorites_view(request, recipe_id):
     return HttpResponseRedirect(reverse("homepage"))
 
 
-"""
-def add_favorite_view(request, recipe_id):
-    user = Author.objects.get(user=request.user)
-    new_fav = Recipe.objects.filter(id=recipe_id).first()
-    user.favorites.add(new_fav)
-    return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
-
-
-def remove_favorite_view(request, recipe_id):
-    user = Author.objects.get(user=request.user)
-    fav_recipe = Recipe.objects.filter(id=recipe_id).first()
-    user.favorites.remove(fav_recipe)
-    return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
-"""
